@@ -143,7 +143,7 @@ scene.setBackgroundImage(img`
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
     `)
-tiles.setCurrentTilemap(tilemap`level1`)
+tiles.setCurrentTilemap(tilemap`level2`)
 let player2 = sprites.create(img`
     . . . . . . . . . . . . . 
     . . . f f f f f f . . . . 
@@ -162,5 +162,8 @@ let player2 = sprites.create(img`
     . f f f f f f f f f f . . 
     . . f f . . . f f f . . . 
     `, SpriteKind.Player)
+scene.cameraFollowSprite(player2)
 info.setLife(3)
 info.setScore(0)
+controller.moveSprite(player2, 100, 100)
+tiles.placeOnTile(player2, tiles.getTileLocation(0, 6))
